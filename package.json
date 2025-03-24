@@ -1,0 +1,19 @@
+{
+  "name": "cs360_semester_project-sp25-",
+  "version": "1.0.0",
+  "description": "CS360 Semester Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Udays0694/CS360_Semester_Project-SP25-.git"
+  },
+  "author": "Andrew Sorensen and Uday Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Udays0694/CS360_Semester_Project-SP25-/issues"
+  },
+  "homepage": "https://github.com/Udays0694/CS360_Semester_Project-SP25-#readme"
+}

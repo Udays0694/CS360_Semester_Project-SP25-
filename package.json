@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Udays0694/CS360_Semester_Project-SP25-/issues"
   },
-  "homepage": "https://github.com/Udays0694/CS360_Semester_Project-SP25-#readme"
+  "homepage": "https://github.com/Udays0694/CS360_Semester_Project-SP25-#readme",
+  "devDependencies": {
+    "eslint": "^9.23.0"
+  }
 }

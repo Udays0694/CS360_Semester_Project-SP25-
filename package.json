@@ -2,10 +2,12 @@
   "name": "cs360_semester_project-sp25-",
   "version": "1.0.0",
   "description": "CS360 Semester Project",
+  "type": "module",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "scripts": {
+      "start": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Udays0694/CS360_Semester_Project-SP25-.git"
@@ -17,6 +19,11 @@
   },
   "homepage": "https://github.com/Udays0694/CS360_Semester_Project-SP25-#readme",
   "devDependencies": {
-    "eslint": "^9.23.0"
+    "eslint": "^9.23.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
   }
 }

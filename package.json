@@ -4,10 +4,10 @@
   "description": "CS360 Semester Project",
   "type": "module",
   "main": "index.js",
-    "scripts": {
-      "start": "nodemon index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Udays0694/CS360_Semester_Project-SP25-.git"

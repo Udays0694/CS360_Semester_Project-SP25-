@@ -2,10 +2,9 @@
   "name": "cs360_semester_project-sp25-",
   "version": "1.0.0",
   "description": "CS360 Semester Project",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +22,8 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
+    "cs360_semester_project-sp25-": "file:",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "mysql2": "^3.14.0"
   }

@@ -27,18 +27,18 @@ router.post('/userSignUp', (req, res) => {
     });
 });
 
-router.post('/login', (req, res) => {
-
-    // const { email, password } = req.body;
-    // const query = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`;
-    // database.query(query, (err, results) => {
-    //     if (err) throw err;
-    //     if (results.length > 0) {
-    //         res.redirect('/home');
-    //     } else {
-    //         res.send('Invalid login credentials');
-    //     }
-    // });
+router.post('/userLogin', (req, res) => {
+    console.log("User Login Access");
+    const { email, password } = req.body;
+    const query = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`;
+    database.query(query, (err, results) => {
+        if (err) throw err;
+        if (results.length > 0) {
+            res.redirect('/home');
+        } else {
+            res.send('Invalid login credentials');
+        }
+    });
 });
 
 module.exports = router;

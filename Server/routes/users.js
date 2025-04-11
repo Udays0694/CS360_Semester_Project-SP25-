@@ -38,7 +38,7 @@ router.post('/createUserGroup', (req, res) =>{
         if (err) throw err;
         res.redirect('/');
     });
-    console.log("UserGroup Created");
+    console.log("Error: createUserGroup route not finalized");
     res.json(req.body);
 
 });

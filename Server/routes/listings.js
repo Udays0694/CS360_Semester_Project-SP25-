@@ -8,6 +8,12 @@ router.get('/', (req, res) =>{
 
 });
 
+router.get('/displayListings', (req, res) =>{
+    
+    console.log("Error: displayListings Route not finalized");
+
+});
+
 router.post('/createListing', (req, res) =>{
     const { listing_name, listing_desc, num_of_item, value_per_item } = req.body;
 

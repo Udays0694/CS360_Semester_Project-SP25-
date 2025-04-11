@@ -16,15 +16,31 @@ router.get("/logIn", (req, res) => {
 // router.post('/',)
 
 router.post('/userSignUp', (req, res) => {
-    console.log("User Created");
+    
     
     const { first_name, last_name, city, state, address, zip_code, email, password } = req.body;
     const query = `INSERT INTO users (first_name, last_name, city, state, address, zip_code, email, password) 
                    VALUES ('${first_name}', '${last_name}', '${city}', '${state}', '${address}', '${zip_code}', '${email}', '${password}')`;
+
     database.query(query, (err, results) => {
         if (err) throw err;
         res.redirect('/');
     });
+    console.log("User Created");
+    res.json(req.body);
+});
+
+router.post('/createUserGroup', (req, res) =>{
+    const {} = req.body;
+    const query = ``;
+
+    database.query(query, (err, results) => {
+        if (err) throw err;
+        res.redirect('/');
+    });
+    console.log("UserGroup Created");
+    res.json(req.body);
+
 });
 
 router.post('/userLogin', (req, res) => {

@@ -29,7 +29,9 @@ router.post('/userSignUp', (req, res) => {
                    VALUES ('${first_name}', '${last_name}', '${city}', '${state}', '${address}', '${zip_code}', '${email}', '${password}')`;
 
     database.query(query, (err, results) => {
-        if (err) throw err;
+        if (err){ 
+            throw err;
+        }
         //res.redirect('http://localhost:3000/');
     });
 
@@ -40,14 +42,19 @@ router.post('/userSignUp', (req, res) => {
 
 //route for creating a user group (unfinished)
 router.post('/createUserGroup', (req, res) =>{
-    const {} = req.body;
-    const query = ``;
+    const {group_name} = req.body;
+    const query = `INSERT INTO user_group (group_name) VALUES ('${group_name}')`;
+
 
     database.query(query, (err, results) => {
-        if (err) throw err;
-        res.redirect('/');
+        if (err) {
+            throw err;
+            console.log("Error Creating UserGroup");
+        }
+        //res.redirect('/');
     });
-    console.log("Error: createUserGroup route not finalized");
+
+    console.log("UserGroup created");
     res.json(req.body);
 
 });
@@ -58,13 +65,36 @@ router.post('/userLogin', (req, res) => {
     const { email, password } = req.body;
     const query = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`;
     database.query(query, (err, results) => {
-        if (err) throw err;
+        if (err){ 
+            throw err;
+        }
         if (results.length > 0) {
             res.redirect('/home');
         } else {
             res.send('Invalid login credentials');
         }
     });
+});
+
+router.put('/userUpdateAddress', (req, res)=>{
+    console.log("User Update Route");
+
+    const {user_id, city, state, address, zip_code} = req.body;
+    const queryUserUpd = `UPDATE users
+                          SET city = '${city}', state = '${state}', address = '${address}', zip_code = '${zip_code}'
+                          WHERE user_id = '${user_id}'`;
+
+    database.query(queryUserUpd, (err, results)=>{
+        if(err){
+            throw err;
+            console.log("Error Updating User Address");
+        }else{
+            console.log(results);
+            console.log("User Address Changed");
+        }
+    });
+
+    res.json(req.body);
 });
 
 module.exports = router;

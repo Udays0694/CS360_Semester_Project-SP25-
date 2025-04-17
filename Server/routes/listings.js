@@ -66,12 +66,34 @@ router.post('/createListing', (req, res) =>{
                            VALUES ('${listing_name}', '${listing_desc}', '${num_of_item}', '${value_per_item}')`;
 
     database.query(queryListings, (err, results) => {
-        if (err) throw err;
+        if (err){
+            throw err;
+        }
         //res.redirect('http://localhost:3000/');
     });
 
     console.log("New Listing Created");
     res.json(req.body);
+});
+
+router.post('/deleteListing/:listing_id', (req, res)=>{
+
+    const queryDelete = `DELETE FROM listings WHERE listing_id = '${req.params.listing_id}'`;
+
+    database.query(queryDelete, (err, results)=>{
+
+        if(err){
+            throw err;
+            console.log("Error Deleting Listing");
+        }else{
+            console.log("Item Successfully Deleted");
+            //console.log(req.params.listing_id);
+        }
+
+    });
+
+    res.json(req.body);
+
 });
 
 //creates route export

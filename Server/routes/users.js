@@ -77,7 +77,7 @@ router.post('/userLogin', (req, res) => {
 });
 
 router.put('/userUpdateAddress', (req, res)=>{
-    console.log("User Update Route");
+    console.log("User Update Address Route");
 
     const {user_id, city, state, address, zip_code} = req.body;
     const queryUserUpd = `UPDATE users
@@ -91,6 +91,48 @@ router.put('/userUpdateAddress', (req, res)=>{
         }else{
             console.log(results);
             console.log("User Address Changed");
+        }
+    });
+
+    res.json(req.body);
+});
+
+router.put('/userUpdateEmail', (req, res)=>{
+    console.log("User Update Email Route");
+
+    const {user_id, email} = req.body;
+    const queryUserUpd = `UPDATE users
+                          SET email = '${email}'
+                          WHERE user_id = '${user_id}'`;
+
+    database.query(queryUserUpd, (err, results)=>{
+        if(err){
+            throw err;
+            console.log("Error Updating User Email");
+        }else{
+            console.log(results);
+            console.log("User Email Changed");
+        }
+    });
+
+    res.json(req.body);
+});
+
+router.put('/userUpdateUserGroup', (req, res)=>{
+    console.log("User Update UserGroup Route");
+
+    const {user_id, group_id} = req.body;
+    const queryUserUpd = `UPDATE users
+                          SET group_id = '${group_id}'
+                          WHERE user_id = '${user_id}'`;
+
+    database.query(queryUserUpd, (err, results)=>{
+        if(err){
+            throw err;
+            console.log("Error Updating UserGroup");
+        }else{
+            console.log(results);
+            console.log("User added to UserGroup");
         }
     });
 

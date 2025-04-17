@@ -18,9 +18,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const userRouter = require("./routes/users.js");
 const listingsRouter = require("./routes/listings.js");
+const transactionsRouter = require("./routes/transactions.js");
 
 app.use("/users", userRouter);
 app.use("/listings", listingsRouter);
+app.use("/transactions", transactionsRouter);
 
 app.get('/home', (req, res) => {
     res.send('Login successful');

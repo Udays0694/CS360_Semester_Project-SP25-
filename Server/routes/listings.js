@@ -96,5 +96,26 @@ router.post('/deleteListing/:listing_id', (req, res)=>{
 
 });
 
+router.put('/listingUpdateAmt', (req, res)=>{
+    console.log("Listing Update Item Amount");
+
+    const {new_num_of_item, listing_id} = req.body;
+    const queryItemUpd = `UPDATE listings
+                          SET num_of_item = '${new_num_of_item}'
+                          WHERE listing_id = '${listing_id}'`;
+
+    database.query(queryItemUpd, (err, results)=>{
+        if(err){
+            throw err;
+            console.log("Error Updating Item Amount");
+        }else{
+            console.log(results);
+            console.log("Item Amount Changed");
+        }
+    });
+
+    res.json(req.body);
+});
+
 //creates route export
 module.exports = router;

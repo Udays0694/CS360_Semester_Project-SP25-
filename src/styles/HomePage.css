@@ -1,0 +1,259 @@
+/* 🌐 General Styles for the HomePage */
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #0056b3;
+  --color-background: #f9f9f9;
+  --color-light: #f1f1f1;
+  --color-dark: #333;
+  --color-muted: #777;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 50px;
+}
+
+/* 📦 Container for the entire homepage */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-background);
+}
+
+/* 🖋️ Main Header */
+.homepage-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 📝 Description or introductory text */
+.homepage-description {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+/* 🖼️ Static Image Section */
+.static-image-container {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.static-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* 🚫 Removed Dynamic Image Styles */
+.dynamic-image-container,
+.dynamic-image,
+.dynamic-image-overlay {
+  display: none !important;
+}
+
+/* 🔒 Removed Animation */
+@keyframes moveImage {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+/* ✨ Features Section */
+.features-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-light);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-lg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.feature-card {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p {
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+/* ✅ Footer */
+.homepage-footer {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-align: center;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid #ddd;
+}
+
+/* ✅ CTA Button */
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--color-secondary);
+}
+
+/* 🔁 Responsive Layout */
+@media (max-width: 768px) {
+  .homepage-header {
+    font-size: 2rem;
+  }
+
+  .homepage-description {
+    font-size: 1.05rem;
+    padding: 0 10px;
+  }
+
+  .static-image {
+    border-radius: 8px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🦸 Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-md);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+  text-align: center; /* ✅ Alignment applied */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+/* 🖼️ Hero Image */
+.hero-image-wrapper {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   Dropdown Styles
+============================ */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-surface);
+  min-width: 160px;
+  padding: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown-item {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: background-color var(--transition-medium);
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-background);
+}
+
+/* Responsive dropdown for mobile */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+}
+

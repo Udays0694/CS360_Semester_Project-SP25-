@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaSignInAlt, FaUserPlus, FaUser, FaShoppingCart, FaBookOpen, FaTv, FaCouch } from 'react-icons/fa';
-import { MdArrowDropDown } from 'react-icons/md';
+import {
+  FaHome,
+  FaSignInAlt,
+  FaUserPlus,
+  FaUser,
+  FaShoppingCart,
+  FaBoxOpen
+} from 'react-icons/fa';
 import '../styles/global.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
-  const toggleDropdown = () => setIsDropdownOpen(prev => !prev);
 
   return (
     <header className="header">
@@ -25,32 +29,11 @@ const Header = () => {
                 <FaHome style={{ marginRight: '6px' }} /> Home
               </Link>
             </li>
-
-            <li className="dropdown">
-              <button className="nav-link dropdown-toggle" onClick={toggleDropdown}>
-                <FaBookOpen style={{ marginRight: '6px' }} /> Categories <MdArrowDropDown />
-              </button>
-              {isDropdownOpen && (
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to="/electronics" className="dropdown-item">
-                      <FaTv style={{ marginRight: '6px' }} /> Electronics
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/furniture" className="dropdown-item">
-                      <FaCouch style={{ marginRight: '6px' }} /> Furniture
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/books" className="dropdown-item">
-                      <FaBookOpen style={{ marginRight: '6px' }} /> Books
-                    </Link>
-                  </li>
-                </ul>
-              )}
+            <li>
+              <Link to="/products/electronics" className="nav-link">
+                <FaBoxOpen style={{ marginRight: '6px' }} /> Products
+              </Link>
             </li>
-
             <li>
               <Link to="/signup" className="nav-link">
                 <FaUserPlus style={{ marginRight: '6px' }} /> Signup
@@ -87,4 +70,3 @@ const Header = () => {
 };
 
 export default Header;
-
